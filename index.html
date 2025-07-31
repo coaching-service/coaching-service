@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>কোচিং সার্ভিস - শিক্ষক ও শিক্ষার্থী খুঁজুন</title>
+    <title>Coaching Service - শিক্ষার মানোন্নয়নে আমাদের অঙ্গীকার</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -11,400 +11,457 @@
             font-family: 'Noto Sans Bengali', sans-serif;
         }
         .gradient-bg {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #581c87 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #5b73e8 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+        }
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .hero-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
         .card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
         }
         .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
-        .form-section {
-            display: none;
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
         }
-        .form-section.active {
-            display: block;
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .premium-shadow {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
 <body class="bg-gray-50">
     <!-- Header -->
-    <header class="gradient-bg text-white shadow-lg">
-        <div class="container mx-auto px-4 py-6">
+    <header class="gradient-bg text-white shadow-2xl sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-3">
-                    <div class="bg-white p-2 rounded-full">
-                        <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-white text-purple-600 p-3 rounded-full shadow-lg">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
                         </svg>
                     </div>
                     <div>
-                        <h1 class="text-2xl font-bold">কোচিং সার্ভিস</h1>
-                        <p class="text-purple-100">শিক্ষক ও শিক্ষার্থীদের সেতুবন্ধন</p>
+                        <h1 class="text-3xl font-bold text-shadow">Coaching Service</h1>
+                        <p class="text-purple-100 text-sm">শিক্ষার মানোন্নয়নে আমাদের অঙ্গীকার</p>
                     </div>
                 </div>
-                <nav class="hidden md:flex space-x-6">
-                    <a href="#home" class="hover:text-purple-200 transition-colors">হোম</a>
-                    <a href="#services" class="hover:text-purple-200 transition-colors">সেবা</a>
-                    <a href="#registration" class="hover:text-purple-200 transition-colors">নিবন্ধন</a>
-                    <a href="#contact" class="hover:text-purple-200 transition-colors">যোগাযোগ</a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-purple-200 transition-colors font-medium">হোম</a>
+                    <a href="#about" class="hover:text-purple-200 transition-colors font-medium">আমাদের সম্পর্কে</a>
+                    <a href="#services" class="hover:text-purple-200 transition-colors font-medium">সেবাসমূহ</a>
+                    <a href="#features" class="hover:text-purple-200 transition-colors font-medium">বৈশিষ্ট্য</a>
+                    <a href="#contact" class="hover:text-purple-200 transition-colors font-medium">যোগাযোগ</a>
                 </nav>
+                <div class="md:hidden">
+                    <button class="text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="gradient-bg text-white py-20">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl md:text-6xl font-bold mb-6">আপনার আদর্শ শিক্ষক খুঁজুন</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">প্রাকপ্রাথমিক থেকে উচ্চ মাধ্যমিক (১২শ শ্রেণী) পর্যন্ত শিক্ষার্থীদের জন্য অভিজ্ঞ শিক্ষক। অনলাইন/অফলাইন, ব্যাচ/ব্যক্তিগত - সব ধরনের শিক্ষা সেবা।</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button onclick="navigateToStudentForm()" class="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors shadow-lg">
-                    শিক্ষার্থী হিসেবে যোগ দিন
+    <section id="home" class="gradient-bg hero-pattern text-white py-24 relative overflow-hidden">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="floating-animation">
+                <h2 class="text-7xl font-bold mb-8 text-gray-900 drop-shadow-2xl">শিক্ষার নতুন দিগন্ত</h2>
+                <p class="text-3xl mb-12 max-w-5xl mx-auto text-gray-800 font-medium leading-relaxed drop-shadow-lg">১২তম শ্রেণী পর্যন্ত সকল বিষয় এবং পবিত্র কুরআন শিক্ষার জন্য অভিজ্ঞ ও দক্ষ শিক্ষকদের সাথে যুক্ত হন। অনলাইন ও অফলাইন উভয় মাধ্যমে মানসম্পন্ন শিক্ষার নিশ্চয়তা।</p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-8 justify-center mt-16">
+                <button onclick="openRegistrationForm()" class="group relative bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 text-white px-16 py-6 rounded-2xl font-bold text-2xl transition-all duration-500 transform hover:scale-105 shadow-[0_20px_40px_rgba(251,146,60,0.4)] hover:shadow-[0_25px_50px_rgba(251,146,60,0.6)] border-2 border-white/20 backdrop-blur-sm overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-r from-yellow-300 via-orange-400 to-red-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative flex items-center justify-center space-x-3">
+                        <span class="text-3xl">🎓</span>
+                        <span>শিক্ষার্থী হিসেবে যোগ দিন</span>
+                    </div>
+                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse"></div>
                 </button>
-                <button onclick="navigateToTeacherForm()" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-900 transition-colors shadow-lg">
-                    শিক্ষক হিসেবে যোগ দিন
+                <button onclick="openRegistrationForm()" class="group relative bg-gradient-to-r from-emerald-500 via-teal-600 to-cyan-600 text-white px-16 py-6 rounded-2xl font-bold text-2xl transition-all duration-500 transform hover:scale-105 shadow-[0_20px_40px_rgba(16,185,129,0.4)] hover:shadow-[0_25px_50px_rgba(16,185,129,0.6)] border-2 border-white/20 backdrop-blur-sm overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative flex items-center justify-center space-x-3">
+                        <span class="text-3xl">👨‍🏫</span>
+                        <span>শিক্ষক হিসেবে যোগ দিন</span>
+                    </div>
+                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse"></div>
                 </button>
+            </div>
+        </div>
+        <!-- Decorative elements -->
+        <div class="absolute top-20 left-10 text-purple-200 opacity-20">
+            <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+        </div>
+        <div class="absolute bottom-20 right-10 text-purple-200 opacity-20">
+            <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-gray-800 mb-6">আমাদের সম্পর্কে</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Coaching Service একটি আধুনিক শিক্ষা প্রতিষ্ঠান যা শিক্ষক ও শিক্ষার্থীদের মধ্যে সেতুবন্ধন তৈরি করে মানসম্পন্ন শিক্ষার নিশ্চয়তা প্রদান করে।</p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-blue-100 text-blue-600 p-3 rounded-full">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-2">অভিজ্ঞ শিক্ষকমণ্ডলী</h3>
+                            <p class="text-gray-600">আমাদের রয়েছে উচ্চ শিক্ষিত ও অভিজ্ঞ শিক্ষকদের একটি দক্ষ টিম যারা প্রতিটি শিক্ষার্থীর ব্যক্তিগত প্রয়োজন অনুযায়ী শিক্ষা প্রদান করেন।</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-green-100 text-green-600 p-3 rounded-full">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-2">ব্যক্তিগত যত্ন</h3>
+                            <p class="text-gray-600">প্রতিটি শিক্ষার্থীর প্রতি আমাদের রয়েছে বিশেষ যত্ন ও মনোযোগ। আমরা নিশ্চিত করি যে প্রতিটি শিশু তার সর্বোচ্চ সম্ভাবনা অর্জন করতে পারে।</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-purple-100 text-purple-600 p-3 rounded-full">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-2">সম্প্রদায়িক সেবা</h3>
+                            <p class="text-gray-600">আমরা শুধু একটি শিক্ষা প্রতিষ্ঠান নই, আমরা একটি সম্প্রদায় যা শিক্ষার মাধ্যমে সমাজের উন্নয়নে কাজ করে যাচ্ছি।</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-purple-400 to-blue-500 rounded-3xl p-8 text-white text-center shadow-2xl">
+                        <div class="text-6xl mb-4">📚</div>
+                        <h3 class="text-3xl font-bold mb-4">৫০০০+</h3>
+                        <p class="text-xl mb-6">সন্তুষ্ট শিক্ষার্থী</p>
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div>
+                                <div class="text-2xl font-bold">১০০+</div>
+                                <div class="text-sm opacity-90">অভিজ্ঞ শিক্ষক</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold">৯৮%</div>
+                                <div class="text-sm opacity-90">সফলতার হার</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-16 bg-white">
+    <section id="services" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">আমাদের সেবাসমূহ</h2>
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-gray-800 mb-6">আমাদের সেবাসমূহ</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">আমরা বিভিন্ন ধরনের শিক্ষামূলক সেবা প্রদান করি যা আপনার সন্তানের শিক্ষার সকল প্রয়োজন পূরণ করে।</p>
+            </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl card-hover border border-blue-200">
-                    <div class="bg-gradient-to-r from-blue-600 to-indigo-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
-                            <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                <div class="bg-white p-8 rounded-2xl shadow-xl card-hover text-center">
+                    <div class="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">অনলাইন ক্লাস</h3>
-                    <p class="text-gray-600">ঘরে বসে লাইভ ক্লাস করুন</p>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">একাডেমিক কোর্স</h3>
+                    <p class="text-gray-600 mb-4">১ম থেকে ১২তম শ্রেণী পর্যন্ত সকল বিষয়ে বিশেষজ্ঞ শিক্ষকদের তত্ত্বাবধানে পাঠদান।</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• বাংলা ও ইংরেজি</li>
+                        <li>• গণিত ও বিজ্ঞান</li>
+                        <li>• সামাজিক বিজ্ঞান</li>
+                    </ul>
                 </div>
-                <div class="text-center p-6 bg-gradient-to-br from-emerald-50 to-teal-100 rounded-xl card-hover border border-emerald-200">
-                    <div class="bg-gradient-to-r from-emerald-600 to-teal-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+
+                <div class="bg-white p-8 rounded-2xl shadow-xl card-hover text-center">
+                    <div class="bg-gradient-to-br from-green-400 to-green-600 text-white p-6 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">হোম টিউশন</h3>
-                    <p class="text-gray-600">আপনার এলাকায় শিক্ষক</p>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">কুরআন শিক্ষা</h3>
+                    <p class="text-gray-600 mb-4">পবিত্র কুরআন তেলাওয়াত, হিফজ ও তাজবীদ শিক্ষার জন্য অভিজ্ঞ হাফেজ ও কারী সাহেবগণ।</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• নাজেরা কুরআন</li>
+                        <li>• হিফজুল কুরআন</li>
+                        <li>• তাজবীদ শিক্ষা</li>
+                    </ul>
                 </div>
-                <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-violet-100 rounded-xl card-hover border border-purple-200">
-                    <div class="bg-gradient-to-r from-purple-600 to-violet-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+
+                <div class="bg-white p-8 rounded-2xl shadow-xl card-hover text-center">
+                    <div class="bg-gradient-to-br from-purple-400 to-purple-600 text-white p-6 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">অনলাইন ক্লাস</h3>
+                    <p class="text-gray-600 mb-4">ঘরে বসে উন্নত প্রযুক্তির মাধ্যমে লাইভ ক্লাস ও ইন্টারঅ্যাক্টিভ শিক্ষা।</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• লাইভ ভিডিও ক্লাস</li>
+                        <li>• রেকর্ডেড লেকচার</li>
+                        <li>• অনলাইন পরীক্ষা</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-xl card-hover text-center">
+                    <div class="bg-gradient-to-br from-orange-400 to-orange-600 text-white p-6 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">ব্যাচ ক্লাস</h3>
-                    <p class="text-gray-600">গ্রুপে পড়াশোনা করুন</p>
-                </div>
-                <div class="text-center p-6 bg-gradient-to-br from-amber-50 to-orange-100 rounded-xl card-hover border border-amber-200">
-                    <div class="bg-gradient-to-r from-amber-600 to-orange-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">ব্যক্তিগত শিক্ষা</h3>
-                    <p class="text-gray-600">একের পর এক মনোযোগ</p>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">ব্যক্তিগত শিক্ষা</h3>
+                    <p class="text-gray-600 mb-4">একের পর এক ব্যক্তিগত মনোযোগ ও কাস্টমাইজড শিক্ষা পদ্ধতি।</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• ব্যক্তিগত টিউটর</li>
+                        <li>• কাস্টম সিলেবাস</li>
+                        <li>• ফ্লেক্সিবল সময়</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Registration Section -->
-    <section id="registration" class="py-16 bg-gray-100">
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">নিবন্ধন করুন</h2>
-            
-            <!-- Form Type Selector -->
-            <div class="flex justify-center mb-8">
-                <div class="bg-white rounded-full p-1 shadow-xl border border-gray-200">
-                    <button id="studentBtn" onclick="showStudentForm()" class="px-6 py-2 rounded-full font-semibold transition-colors bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg">
-                        শিক্ষার্থী
-                    </button>
-                    <button id="teacherBtn" onclick="showTeacherForm()" class="px-6 py-2 rounded-full font-semibold transition-colors text-gray-600 hover:text-blue-600">
-                        শিক্ষক
-                    </button>
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-gray-800 mb-6">কেন আমাদের বেছে নেবেন?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">আমাদের রয়েছে আধুনিক শিক্ষা পদ্ধতি ও অভিজ্ঞতার সমন্বয়ে তৈরি এক অনন্য শিক্ষা ব্যবস্থা।</p>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-12">
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-blue-100 to-blue-200 p-8 rounded-full w-32 h-32 mx-auto mb-8 flex items-center justify-center">
+                        <div class="text-5xl">🎯</div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">লক্ষ্যভিত্তিক শিক্ষা</h3>
+                    <p class="text-gray-600">প্রতিটি শিক্ষার্থীর ব্যক্তিগত লক্ষ্য অনুযায়ী বিশেষায়িত শিক্ষা পরিকল্পনা প্রণয়ন ও বাস্তবায়ন।</p>
                 </div>
-            </div>
-
-            <!-- Student Registration Form -->
-            <div id="studentForm" class="form-section active max-w-2xl mx-auto bg-white rounded-xl shadow-2xl p-8 border border-gray-100">
-                <h3 class="text-2xl font-bold mb-6 text-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">শিক্ষার্থী নিবন্ধন</h3>
-                <form onsubmit="submitStudentForm(event)">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">শিক্ষার্থীর নাম *</label>
-                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">শ্রেণী *</label>
-                            <select required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                                <option value="">শ্রেণী নির্বাচন করুন</option>
-                                <option value="pre-primary">প্রাকপ্রাথমিক</option>
-                                <option value="1">১ম শ্রেণী</option>
-                                <option value="2">২য় শ্রেণী</option>
-                                <option value="3">৩য় শ্রেণী</option>
-                                <option value="4">৪র্থ শ্রেণী</option>
-                                <option value="5">৫ম শ্রেণী</option>
-                                <option value="6">৬ষ্ঠ শ্রেণী</option>
-                                <option value="7">৭ম শ্রেণী</option>
-                                <option value="8">৮ম শ্রেণী</option>
-                                <option value="9">৯ম শ্রেণী</option>
-                                <option value="10">১০ম শ্রেণী</option>
-                                <option value="11">১১শ শ্রেণী (উচ্চ মাধ্যমিক)</option>
-                                <option value="12">১২শ শ্রেণী (উচ্চ মাধ্যমিক)</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">অভিভাবকের নাম *</label>
-                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">মোবাইল নম্বর *</label>
-                            <input type="tel" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                        </div>
-                        <div class="md:col-span-2">
-                            <label class="block text-gray-700 font-semibold mb-2">ঠিকানা *</label>
-                            <textarea required rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"></textarea>
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">পছন্দের বিষয় *</label>
-                            <select required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                                <option value="">বিষয় নির্বাচন করুন</option>
-                                <option value="math">গণিত</option>
-                                <option value="physics">পদার্থবিজ্ঞান</option>
-                                <option value="chemistry">রসায়ন</option>
-                                <option value="biology">জীববিজ্ঞান</option>
-                                <option value="bangla">বাংলা</option>
-                                <option value="english">ইংরেজি</option>
-                                <option value="all">সকল বিষয়</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">শিক্ষার ধরন *</label>
-                            <select required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                                <option value="">নির্বাচন করুন</option>
-                                <option value="online">অনলাইন</option>
-                                <option value="offline">অফলাইন</option>
-                                <option value="batch">ব্যাচ</option>
-                                <option value="personal">ব্যক্তিগত</option>
-                            </select>
-                        </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-green-100 to-green-200 p-8 rounded-full w-32 h-32 mx-auto mb-8 flex items-center justify-center">
+                        <div class="text-5xl">⏰</div>
                     </div>
-                    <button type="submit" class="w-full mt-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl">
-                        নিবন্ধন সম্পন্ন করুন
-                    </button>
-                </form>
-            </div>
-
-            <!-- Teacher Registration Form -->
-            <div id="teacherForm" class="form-section max-w-2xl mx-auto bg-white rounded-xl shadow-2xl p-8 border border-gray-100">
-                <h3 class="text-2xl font-bold mb-6 text-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">শিক্ষক নিবন্ধন</h3>
-                <form onsubmit="submitTeacherForm(event)">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">শিক্ষকের নাম *</label>
-                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">শিক্ষাগত যোগ্যতা *</label>
-                            <input type="text" required placeholder="যেমন: এমএ, বিএসসি" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">অভিজ্ঞতা (বছর) *</label>
-                            <input type="number" required min="0" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">মোবাইল নম্বর *</label>
-                            <input type="tel" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                        </div>
-                        <div class="md:col-span-2">
-                            <label class="block text-gray-700 font-semibold mb-2">ঠিকানা *</label>
-                            <textarea required rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"></textarea>
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">বিশেষজ্ঞ বিষয় *</label>
-                            <select required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                                <option value="">বিষয় নির্বাচন করুন</option>
-                                <option value="math">গণিত</option>
-                                <option value="physics">পদার্থবিজ্ঞান</option>
-                                <option value="chemistry">রসায়ন</option>
-                                <option value="biology">জীববিজ্ঞান</option>
-                                <option value="bangla">বাংলা</option>
-                                <option value="english">ইংরেজি</option>
-                                <option value="all">সকল বিষয়</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">শিক্ষাদানের ধরন *</label>
-                            <div class="space-y-2">
-                                <label class="flex items-center">
-                                    <input type="checkbox" value="online" class="mr-2">
-                                    <span>অনলাইন</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" value="offline" class="mr-2">
-                                    <span>অফলাইন</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" value="batch" class="mr-2">
-                                    <span>ব্যাচ ক্লাস</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" value="personal" class="mr-2">
-                                    <span>ব্যক্তিগত শিক্ষা</span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="md:col-span-2">
-                            <label class="block text-gray-700 font-semibold mb-2">ফি (প্রতি মাসে)</label>
-                            <input type="number" placeholder="টাকা" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                        </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">নমনীয় সময়সূচী</h3>
+                    <p class="text-gray-600">আপনার সুবিধামতো সময়ে ক্লাস নেওয়ার সুবিধা। সকাল, দুপুর বা সন্ধ্যা - যেকোনো সময়।</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-purple-100 to-purple-200 p-8 rounded-full w-32 h-32 mx-auto mb-8 flex items-center justify-center">
+                        <div class="text-5xl">📊</div>
                     </div>
-                    <button type="submit" class="w-full mt-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl">
-                        শিক্ষক হিসেবে যোগ দিন
-                    </button>
-                </form>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">নিয়মিত মূল্যায়ন</h3>
+                    <p class="text-gray-600">নিয়মিত পরীক্ষা ও মূল্যায়নের মাধ্যমে শিক্ষার্থীর অগ্রগতি পর্যবেক্ষণ ও উন্নতির দিকনির্দেশনা।</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Facebook Integration -->
-    <section class="py-16 bg-white">
+    <!-- Facebook Section -->
+    <section class="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800">আমাদের সাথে যুক্ত থাকুন</h2>
-            <div class="bg-blue-50 rounded-lg p-8 max-w-md mx-auto">
-                <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                    </svg>
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold mb-6">আমাদের সাথে যুক্ত থাকুন</h2>
+                <p class="text-xl mb-8 opacity-90">আমাদের ফেসবুক পেজে আরও তথ্য, আপডেট ও শিক্ষামূলক কন্টেন্ট পান। আমাদের কমিউনিটির সাথে যুক্ত হয়ে শিক্ষার যাত্রায় এগিয়ে চলুন।</p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <a href="https://www.facebook.com/share/19EAcd5qg9/" target="_blank" class="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                        <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        Coaching Service ফেসবুক পেজ
+                    </a>
+                    <div class="flex items-center space-x-4 text-purple-100">
+                        <span class="text-sm">👥 ১০,০০০+ ফলোয়ার</span>
+                        <span class="text-sm">⭐ ৪.৮/৫ রেটিং</span>
+                    </div>
                 </div>
-                <h3 class="text-xl font-semibold mb-4">কোচিং সার্ভিস</h3>
-                <p class="text-gray-600 mb-6">আমাদের ফেসবুক পেজে লাইক দিন এবং সর্বশেষ আপডেট পান</p>
-                <a href="https://www.facebook.com/share/1CpW7dg4rS/" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                    ফেসবুক পেজ দেখুন
-                </a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-800 text-white">
+    <section id="contact" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-12">
-                <div>
-                    <h2 class="text-3xl font-bold mb-6">যোগাযোগ করুন</h2>
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-3">
-                            <svg class="w-6 h-6 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                            </svg>
-                            <span>+৮৮০ ১৭XX-XXXXXX</span>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <svg class="w-6 h-6 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-                            </svg>
-                            <span>info@coachingservice.com</span>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <svg class="w-6 h-6 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>ঢাকা, বাংলাদেশ</span>
-                        </div>
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-gray-800 mb-6">যোগাযোগ করুন</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">আমাদের সাথে যোগাযোগ করুন এবং আপনার শিক্ষার যাত্রা শুরু করুন আজই।</p>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-12">
+                <div class="text-center p-8 bg-white rounded-2xl shadow-xl card-hover">
+                    <div class="bg-blue-100 text-blue-600 p-6 rounded-full w-20 h-20 mx-auto mb-6">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                        </svg>
                     </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">ইমেইল</h3>
+                    <p class="text-gray-600 mb-4">আমাদের ইমেইলে যোগাযোগ করুন</p>
+                    <a href="mailto:coaching.info.service@gmail.com" class="text-blue-600 font-semibold hover:text-blue-800">info@coachingservice.com</a>
                 </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">দ্রুত যোগাযোগ</h3>
-                    <form onsubmit="submitContactForm(event)" class="space-y-4">
-                        <input type="text" placeholder="আপনার নাম" required class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white">
-                        <input type="email" placeholder="ইমেইল" required class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white">
-                        <textarea placeholder="আপনার বার্তা" rows="4" required class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white"></textarea>
-                        <button type="submit" class="w-full bg-purple-600 text-white py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
-                            বার্তা পাঠান
-                        </button>
-                    </form>
+                <div class="text-center p-8 bg-white rounded-2xl shadow-xl card-hover">
+                    <div class="bg-green-100 text-green-600 p-6 rounded-full w-20 h-20 mx-auto mb-6">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">ফোন</h3>
+                    <p class="text-gray-600 mb-4">সরাসরি কল করুন</p>
+                    <a href="tel:+8801*********" class="text-green-600 font-semibold hover:text-green-800">+৮৮০ ১৭০০ ০০০ ০০০</a>
+                </div>
+                <div class="text-center p-8 bg-white rounded-2xl shadow-xl card-hover">
+                    <div class="bg-purple-100 text-purple-600 p-6 rounded-full w-20 h-20 mx-auto mb-6">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">ঠিকানা</h3>
+                    <p class="text-gray-600 mb-4">আমাদের অফিসে আসুন</p>
+                    <p class="text-purple-600 font-semibold">ঢাকা, বাংলাদেশ</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="container mx-auto px-4 text-center">
-            <div class="flex items-center justify-center space-x-3 mb-4">
-                <div class="bg-purple-600 p-2 rounded-full">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"/>
-                    </svg>
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-4 gap-12">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="bg-purple-600 p-3 rounded-full">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-3xl font-bold">Coaching Service</h3>
+                            <p class="text-gray-400">শিক্ষার মানোন্নয়নে আমাদের অঙ্গীকার</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">আমরা শিক্ষক ও শিক্ষার্থীদের মধ্যে সেতুবন্ধন তৈরি করে মানসম্পন্ন শিক্ষার নিশ্চয়তা প্রদান করি। আমাদের লক্ষ্য প্রতিটি শিশুর সুপ্ত প্রতিভা বিকশিত করা।</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/19EAcd5qg9/" target="_blank" class="bg-blue-600 p-3 rounded-full hover:bg-blue-700 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                <span class="text-xl font-bold">কোচিং সার্ভিস</span>
+                <div>
+                    <h4 class="text-xl font-bold mb-6">দ্রুত লিংক</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-300 hover:text-white transition-colors">হোম</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition-colors">আমাদের সম্পর্কে</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition-colors">সেবাসমূহ</a></li>
+                        <li><a href="#features" class="text-gray-300 hover:text-white transition-colors">বৈশিষ্ট্য</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors">যোগাযোগ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6">যোগাযোগের তথ্য</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            <span class="text-gray-300">coaching.info.service@gmail.com</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            <span class="text-gray-300">+৮৮০ ১*** *** ***</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300">ফরিদপুর,ঢাকা,বাংলাদেশ</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p class="text-gray-400 mb-4">শিক্ষার মান উন্নয়নে আমাদের অঙ্গীকার</p>
-            <p class="text-gray-500">&copy; ২০২৪ কোচিং সার্ভিস। সকল অধিকার সংরক্ষিত।</p>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; ২০২৪ Coaching Service। সকল অধিকার সংরক্ষিত। | শিক্ষার মানোন্নয়নে আমাদের অঙ্গীকার</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Registration Form Modal -->
+    <div id="registrationModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+            <div class="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-6 flex justify-between items-center">
+                <h2 class="text-2xl font-bold">নিবন্ধন ফর্ম</h2>
+                <button onclick="closeRegistrationForm()" class="text-white hover:text-gray-200 text-3xl font-bold">×</button>
+            </div>
+            <div class="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeiz7IjWa0wywUAPJo-QE8Jrr3iH6XHUqk14MvaE6L-KQJqeQ/viewform?embedded=true" width="100%" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
+        </div>
+    </div>
+
     <script>
-        function navigateToStudentForm() {
-            showStudentForm();
-            document.getElementById('registration').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+        // Registration form modal functions
+        function openRegistrationForm() {
+            document.getElementById('registrationModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
         }
 
-        function navigateToTeacherForm() {
-            showTeacherForm();
-            document.getElementById('registration').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+        function closeRegistrationForm() {
+            document.getElementById('registrationModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
         }
 
-        function showStudentForm() {
-            document.getElementById('studentForm').classList.add('active');
-            document.getElementById('teacherForm').classList.remove('active');
-            document.getElementById('studentBtn').classList.add('bg-gradient-to-r', 'from-blue-600', 'to-indigo-600', 'text-white', 'shadow-lg');
-            document.getElementById('studentBtn').classList.remove('text-gray-600');
-            document.getElementById('teacherBtn').classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-indigo-600', 'text-white', 'shadow-lg');
-            document.getElementById('teacherBtn').classList.add('text-gray-600');
-        }
+        // Close modal when clicking outside
+        document.getElementById('registrationModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeRegistrationForm();
+            }
+        });
 
-        function showTeacherForm() {
-            document.getElementById('teacherForm').classList.add('active');
-            document.getElementById('studentForm').classList.remove('active');
-            document.getElementById('teacherBtn').classList.add('bg-gradient-to-r', 'from-blue-600', 'to-indigo-600', 'text-white', 'shadow-lg');
-            document.getElementById('teacherBtn').classList.remove('text-gray-600');
-            document.getElementById('studentBtn').classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-indigo-600', 'text-white', 'shadow-lg');
-            document.getElementById('studentBtn').classList.add('text-gray-600');
-        }
-
-        function submitStudentForm(event) {
-            event.preventDefault();
-            alert('ধন্যবাদ! আপনার শিক্ষার্থী নিবন্ধন সফল হয়েছে। আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব।');
-            event.target.reset();
-        }
-
-        function submitTeacherForm(event) {
-            event.preventDefault();
-            alert('ধন্যবাদ! আপনার শিক্ষক নিবন্ধন সফল হয়েছে। আমরা আপনার আবেদন পর্যালোচনা করে শীঘ্রই জানাব।');
-            event.target.reset();
-        }
-
-        function submitContactForm(event) {
-            event.preventDefault();
-            alert('ধন্যবাদ! আপনার বার্তা পাঠানো হয়েছে। আমরা শীঘ্রই উত্তর দেব।');
-            event.target.reset();
-        }
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeRegistrationForm();
+            }
+        });
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -419,6 +476,52 @@
                 }
             });
         });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards for animation
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(card);
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backdropFilter = 'blur(10px)';
+                header.style.backgroundColor = 'rgba(102, 126, 234, 0.95)';
+            } else {
+                header.style.backdropFilter = 'none';
+                header.style.backgroundColor = '';
+            }
+        });
+
+        // Add pulse animation to CTA buttons
+        const ctaButtons = document.querySelectorAll('button');
+        ctaButtons.forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                button.classList.add('pulse-animation');
+            });
+            button.addEventListener('mouseleave', () => {
+                button.classList.remove('pulse-animation');
+            });
+        });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9674ebf4b2b04ea3',t:'MTc1Mzg3OTE5Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'967bac0f32563372',t:'MTc1Mzk0OTk4MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+                </html>
